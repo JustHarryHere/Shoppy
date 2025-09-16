@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace Shopy
 {
     public partial class Form1 : Form
@@ -20,5 +22,24 @@ namespace Shopy
                 e.SuppressKeyPress = true;
             }
         }
+
+        private void Enter_Click(object sender, EventArgs e)
+        {
+            Item TestBox = new Item("Test", 9.99, 5, "Category", "This is a test item.", "path/to/image.jpg", 1);
+            TestBox.ItemSettupName(textBox1.Text);
+            MessageBox.Show("Item name updated to: " + textBox1.Text);
+        }
+
+        private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
     }
 }

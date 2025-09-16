@@ -39,6 +39,7 @@ namespace Shopy
             if (amount <= this.quantity)
             {
                 this.quantity -= amount;
+                PurchasedItems.AddPurchasedItem(this);
             }
             else
             {
@@ -55,25 +56,35 @@ namespace Shopy
         }
         public void DisplayItemInfo()
         {
-            Console.WriteLine($"Name: {name}");
-            Console.WriteLine($"Price: {price}");
-            Console.WriteLine($"Quantity: {quantity}");
-            Console.WriteLine($"Category: {category}");
-            Console.WriteLine($"Description: {description}");
-            Console.WriteLine($"Image Path: {imagePath}");
-            Console.WriteLine($"ID: {id}");
+
         }
     }
 
     public class SubmittedItem : Item
     {
-            public SubmittedItem(string name, double price, int quantity, string category, string description, string imagePath, int id)
-            : base(name, price, quantity, category, description, imagePath, id)
+        public SubmittedItem(string name, double price, int quantity, string category, string description, string imagePath, int id)
+        : base(name, price, quantity, category, description, imagePath, id)
         {
         }
         public void SubmitItem()
         {
 
+        }
+    }
+
+    public class AvailableItems : List<Item>
+    {
+        public void AddItem(Item item)
+        {
+            this.Add(item);
+        }
+    }
+
+    public class PurchasedItems : List<Item>
+    {
+        public void AddPurchasedItem(Item item)
+        {
+            this.Add(item);
         }
     }
 }
