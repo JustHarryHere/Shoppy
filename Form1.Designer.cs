@@ -63,7 +63,7 @@ namespace Shopy
             Enter.Click += Enter_Click;
             // 
             // dataGridView1
-            // 
+            // tr56ikkj
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Name, Price, Amount });
             dataGridView1.Location = new Point(759, 0);
