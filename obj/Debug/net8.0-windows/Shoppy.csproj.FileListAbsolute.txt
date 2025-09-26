@@ -1,0 +1,16 @@
+C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.Form1.resources
+C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.csproj.GenerateResource.cache
+C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.AssemblyInfo.cs
+C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\Shoppy.exe
+C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\Shoppy.deps.json
+C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\Shoppy.runtimeconfig.json
+C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\Shoppy.dll
+C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\Shoppy.pdb
+C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.dll
+C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\refint\Shoppy.dll
+C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.pdb
+C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.genruntimeconfig.cache
+C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\ref\Shoppy.dll
