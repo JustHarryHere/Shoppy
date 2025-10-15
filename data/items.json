@@ -1,0 +1,22 @@
+{
+  "AvailableItems": [
+    {
+      "name": "Item1",
+      "category": "CategoryA",
+      "price": 10.99,
+      "quantity": 100,
+      "description": "This is a description for Item1.",
+      "imagepath": "placeholder.jpg",
+      "id": 1
+    },
+    {
+      "category": "CategoryB",
+      "description": "This is a description for Item2.",
+      "id": 2,
+      "imagepath": "",
+      "name": "Item2",
+      "price": 15.49,
+      "quantity": 50
+    }
+  ]
+}

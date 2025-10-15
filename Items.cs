@@ -1,19 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.IO;
 
 namespace Shoppy
 {
+
+
     public abstract class Item
     {
-        public string name;
-        public double price;
-        public int quantity;
-        public string category;
-        public string description;
-        public string imagePath;
-        public int id;
-        public int ammount;
-        public Item(string name, double price, int quantity, string category, string description, string imagePath, int id)
+        public string name { get; set;}
+        public double price { get; set; }
+        public int quantity { get; set; }
+        public string category { get; set; }
+        public string description { get; set; }
+        public string imagePath { get; set; }
+        public int id {  get; set; }
+        public int inbasket = 0;
+        public abstract void SeeItem();
+    }
+
+    public class SetItem : Item
+    {
+        public int id=0;
+        public SetItem(string name, double price, int quantity, string category, string description, string imagePath)
         {
             this.name = name;
             this.price = price;
@@ -21,18 +32,6 @@ namespace Shoppy
             this.category = category;
             this.description = description;
             this.imagePath = imagePath;
-            this.id = id;
-            this.ammount = 0;
-        }
-
-        public abstract void SeeItem();
-    }
-
-    public class SetItem : Item
-    {
-        public SetItem(string name, double price, int quantity, string category, string description, string imagePath, int id)
-            : base(name, price, quantity, category, description, imagePath, id)
-        {
         }
         public override void SeeItem()
         {
@@ -46,34 +45,15 @@ namespace Shoppy
 
     public class SubmittedItem : Item
     {
-        public SubmittedItem(string name, double price, int quantity, string category, string description, string imagePath, int id)
-        : base(name, price, quantity, category, description, imagePath, id) { }
-        public void ItemSettupName(string Input)
+        public SubmittedItem() { }
+
+        public void ItemSettup(string name,double price,int quantity ,string descryption)
         {
-            this.name = Input;
-        }
-        public void ItemSettupPrice(double Input)
-        {
-            this.price = Input;
-        }
-        public void ItemSettupQuantity(int Input)
-        {
-            this.quantity = Input;
-        }
-        public void ItemSettupCategory(string Input)
-        {
-            this.category = Input;
-        }
-        public void ItemSettupDescription(string Input)
-        {
-            this.description = Input;
-        }
-        public void ItemSettupImagePath(string Input)
-        {
-            this.imagePath = Input;
-        }
-        public void ItemSettup(int Input)
-        {
+            this.name = name;
+            this.id+=1;
+            this.price = price;
+            this.quantity = quantity;
+            this.description= descryption;
 
         }
         public void SubmitItem()
@@ -81,14 +61,17 @@ namespace Shoppy
             if (this.name != null && this.price > 0 && this.quantity > 0)
             {
                 // add the item to the available items list
+                SetItem USI = new SetItem(this.name, this.price, this.quantity, this.category, this.description, this.imagePath);
             }
             else
             {
-                throw new Exception("Item must have a name, price greater than 0, and quantity greater than 0.");
+                MessageBox.Show("Please make sure all fields are entered to submit item");
             }
         }
         public override void SeeItem()
         {
+
+            
             // code to display item details
         }
     }
@@ -96,13 +79,66 @@ namespace Shoppy
     {
         public void AddItem(Item item)
         {
-            this.Add(item);
+            if (item.quantity > 0)
+            {
+                this.Add(item);
+            }
+        }
+
+        public List<Item> CategoryFilter(string category)
+        {
+            AvailableItems Itemsofcategory = new AvailableItems();
+            foreach (var item in this)
+            {
+                if (item.category == category)
+                {
+                    Itemsofcategory.Add(item);
+                }
+            }
+            return Itemsofcategory;
+        }
+
+        public void ConvertlisttoAvailableItems(List<SetItem> items)
+        {
+            this.Clear();
+            foreach (var item in items)
+            {
+                if (item.quantity > 0)
+                {
+                    this.Add(item);
+                }
+            }
+        }
+
+        public void ConvertAvIttoList(List<Item> items)
+        {
+            this.Clear();
+            foreach (var item in items)
+            {
+                if (item.quantity > 0)
+                {
+                    this.Add(item);
+                }
+            }
+        }
+
+        public List<Item> SearchItems(string keyword)
+        {
+            AvailableItems SearchResults = new AvailableItems();
+            foreach (var item in this)
+            {
+                if (item.name.Contains(keyword,StringComparison.OrdinalIgnoreCase) ||item.description.Contains(keyword, StringComparison.OrdinalIgnoreCase) ||item.category.Contains(keyword, StringComparison.OrdinalIgnoreCase))
+                {
+                    SearchResults.Add(item);
+                }
+            }
+            return SearchResults;
         }
     }
 
     public class UnavailableItems : List<Item>
     {
-        public void unavailableItem(Item item)
+        public void AddItem(Item item)
         {
             this.Add(item);
         }
@@ -113,7 +149,42 @@ namespace Shoppy
         }
     }
 
-}
-   
+    public static class JsonManager
+    {
+        public static void SaveItemsToJson(string filePath, List<SetItem> items)
+        {
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+            var json = JsonSerializer.Serialize(items, options);
+            File.WriteAllText(filePath, json);
+        }
+        public static List<SetItem> OpenItemsFromJson(string filePath)
+        {
+            if (!File.Exists(filePath))
+                return new List<SetItem>();
+
+            var json = File.ReadAllText(filePath);
+            using var doc = JsonDocument.Parse(json);
+            var itemsElement = doc.RootElement.GetProperty("AvailableItems");
+            return JsonSerializer.Deserialize<List<SetItem>>(itemsElement.GetRawText()) ?? new List<SetItem>();
+        }
+
+        public static void AddItemtoJson(string filePath, SetItem newItem)
+        {
+            var items = OpenItemsFromJson(filePath);
+            items.Add(newItem);
+            SaveItemsToJson(filePath, items);
+        }
+
+        public static void RemoveItemFromJson(string filePath, SetItem itemToRemove)
+        {
+            var items = OpenItemsFromJson(filePath);
+            items.RemoveAll(i => i.id == itemToRemove.id);
+            SaveItemsToJson(filePath, items);
+        }
+    }
+}   
 
 

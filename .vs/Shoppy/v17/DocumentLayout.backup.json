@@ -7,24 +7,52 @@
       "RelativeMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|c:\\users\\user\\source\\repos\\shoppy\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|C:\\Users\\user\\source\\repos\\Shoppy\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|c:\\users\\user\\source\\repos\\shoppy\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|c:\\users\\user\\source\\repos\\shoppy\\basket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|solutionrelative:basket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|c:\\users\\user\\source\\repos\\shoppy\\items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|solutionrelative:items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|C:\\Users\\user\\source\\repos\\Shoppy\\additem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|solutionrelative:additem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|c:\\users\\user\\source\\repos\\shoppy\\data\\items.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|solutionrelative:data\\items.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|c:\\users\\user\\source\\repos\\shoppy\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|c:\\users\\user\\source\\repos\\shoppy\\additem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|solutionrelative:additem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|c:\\users\\user\\source\\repos\\shoppy\\shoppy.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|solutionrelative:shoppy.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|c:\\users\\user\\source\\repos\\shoppy\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|C:\\Users\\user\\source\\repos\\Shoppy\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|c:\\users\\user\\source\\repos\\shoppy\\additem.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|solutionrelative:additem.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|C:\\Users\\user\\source\\repos\\Shoppy\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|c:\\users\\user\\source\\repos\\shoppy\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{378B781A-E8AD-4243-ACF6-22FFBE9DC7A0}|Shoppy.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,43 +74,122 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Shoppy.csproj",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Shoppy\\Shoppy.csproj",
+              "RelativeDocumentMoniker": "Shoppy.csproj",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Shoppy\\Shoppy.csproj",
+              "RelativeToolTip": "Shoppy.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-15T04:00:05.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddItem.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Shoppy\\AddItem.cs",
+              "RelativeDocumentMoniker": "AddItem.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Shoppy\\AddItem.cs [Design]",
+              "RelativeToolTip": "AddItem.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T17:39:01.581Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AddItem.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Shoppy\\AddItem.cs",
+              "RelativeDocumentMoniker": "AddItem.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Shoppy\\AddItem.cs",
+              "RelativeToolTip": "AddItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T17:39:12.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Form2.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Shoppy\\Form2.cs",
+              "RelativeDocumentMoniker": "Form2.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Shoppy\\Form2.cs",
+              "RelativeToolTip": "Form2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T16:44:16.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Form2.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Shoppy\\Form2.cs",
+              "RelativeDocumentMoniker": "Form2.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Shoppy\\Form2.cs [Design]",
+              "RelativeToolTip": "Form2.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T16:44:04.647Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AddItem.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Shoppy\\AddItem.Designer.cs",
+              "RelativeDocumentMoniker": "AddItem.Designer.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Shoppy\\AddItem.Designer.cs",
+              "RelativeToolTip": "AddItem.Designer.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAnwEAAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T19:12:31.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Shoppy\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Shoppy\\Form1.Designer.cs",
+              "RelativeToolTip": "Form1.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T15:35:18.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "form1.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Shoppy\\form1.cs",
+              "RelativeDocumentMoniker": "form1.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Shoppy\\form1.cs",
+              "RelativeToolTip": "form1.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAAACcAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T15:19:51.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Items.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Shoppy\\Items.cs",
               "RelativeDocumentMoniker": "Items.cs",
               "ToolTip": "C:\\Users\\user\\source\\repos\\Shoppy\\Items.cs",
               "RelativeToolTip": "Items.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAiwCYAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKgAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-19T16:08:20.547Z"
+              "WhenOpened": "2025-09-19T16:08:20.547Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Basket.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Shoppy\\Basket.cs",
-              "RelativeDocumentMoniker": "Basket.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\Shoppy\\Basket.cs",
-              "RelativeToolTip": "Basket.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-25T05:43:19.443Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Shoppy\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\Shoppy\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-25T05:12:59.635Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Shoppy\\form1.cs",
               "RelativeDocumentMoniker": "form1.cs",
@@ -95,27 +202,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Shoppy\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\Shoppy\\Form1.Designer.cs",
-              "RelativeToolTip": "Form1.Designer.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAqwBEAAAAlAAAAAAAAAA==",
+              "Title": "Basket.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Shoppy\\Basket.cs",
+              "RelativeDocumentMoniker": "Basket.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Shoppy\\Basket.cs",
+              "RelativeToolTip": "Basket.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T15:35:18.106Z"
+              "WhenOpened": "2025-09-25T05:43:19.443Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "form1.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Shoppy\\form1.cs",
-              "RelativeDocumentMoniker": "form1.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\Shoppy\\form1.cs",
-              "RelativeToolTip": "form1.cs",
-              "ViewState": "AgIAAKkAAAAAAAAAAAAAAIsAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T15:19:51.724Z",
+              "DocumentIndex": 4,
+              "Title": "items.json",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Shoppy\\data\\items.json",
+              "RelativeDocumentMoniker": "data\\items.json",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Shoppy\\data\\items.json",
+              "RelativeToolTip": "data\\items.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-15T04:02:37.516Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Shoppy\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Shoppy\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T05:12:59.635Z"
             }
           ]
         }

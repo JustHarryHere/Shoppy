@@ -12,15 +12,37 @@ namespace Shoppy
             items = new List<Item>();
         }
 
-        public void AddItem(Item item)
+        public void AddItem(Item item, int amount)
         {
-            items.Add(item);
-         
+            if (amount <= 0)
+            {
+                MessageBox.Show("Umm, there's nothing to add...");
+                return;
+            }
+            if (amount + item.inbasket > item.quantity)
+            {
+                MessageBox.Show($"Asking for a bit too much there, buddy.");
+                return;
+            }
+            else if (items.Contains(item))
+            {
+                item.inbasket += amount;
+                MessageBox.Show($"Added {amount} {item.name} to basket. there're now {item.inbasket} {item.name} in basket.");
+                return;
+            }
+            else
+            {
+                items.Add(item);
+                item.inbasket += amount;
+                MessageBox.Show($"Added {amount} {item.name} to basket. there's now {item.inbasket} {item.name} in basket.");
+                return;
+            }
         }
 
         public void RemoveItem(Item item)
         {
             items.Remove(item);
+            item.inbasket = 0;
         }
 
         public List<Item> GetItems()
@@ -33,7 +55,7 @@ namespace Shoppy
             double total = 0;
             foreach (var item in items)
             {
-                total += item.price * item.ammount;
+                total += item.price * item.inbasket;
             }
             return total;
         }

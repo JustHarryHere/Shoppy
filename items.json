@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Sybau",
+    "price": 69.42,
+    "quantity": 69,
+    "category": "Sybau",
+    "description": "Sybau",
+    "imagePath": "image/Sybau.jpg"
+  },
+  {
+    "name": "Disco Elysium the final cut",
+    "price": 39.99,
+    "quantity": 10,
+    "category": "Game",
+    "description": "Disco Elysium is a 2019 role-playing video game developed and published by ZA/UM.",
+    "imagePath": "image/DiscoElysium.jpg"
+  },
+  {
+    "name": "The Bends Vinyl",
+    "price": 34.95,
+    "quantity": 7,
+    "category": "Music",
+    "description": "The Bends by Radiohead now released in vinyl form",
+    "imagePath": "image/TheBends.jpg"
+  },
+  {
+    "name": "Nintendo Switch",
+    "price": 90.0,
+    "quantity": 7,
+    "category": "Technology",
+    "description": "The best selling game console of all time",
+    "imagePath": "image/NintendoSwitch.jpg"
+  },
+  {
+    "name": "Spam",
+    "price": 90.0,
+    "quantity": 7,
+    "category": "Food",
+    "description": "Spam",
+    "imagePath": "image/Spam.jpg"
+  },
+  {
+    "name": "Apple",
+    "price": 90.0,
+    "quantity": 7,
+    "category": "Food",
+    "description": "A freshly picked apple from the Just_Orchard",
+    "imagePath": "image/Apple.jpg"
+  },
+  {
+    "name": "Canned Beans",
+    "price": 4.89,
+    "quantity": 7,
+    "category": "Food",
+    "description": "Classic Heinz beans, perfect part of a perfect british breakfast.",
+    "imagePath": "image/CannedBeans.jpg"
+  }
+  {
+    "name":"placeholder"
+    "price": 69,
+    "quantity": 69,
+    "category": "placeholder",
+    "description": "placeholder",
+    "imagePath": "image/placeholder.jpg"
+  }
+]

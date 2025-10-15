@@ -1,0 +1,11 @@
+[
+  {
+    "name": "dsd",
+    "price": 33,
+    "quantity": 90,
+    "category": "ds",
+    "description": "sdsds",
+    "imagePath": "@image/placeholder.jpg",
+    "id": 0
+  }
+]
