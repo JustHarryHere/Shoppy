@@ -10,10 +10,13 @@ using System.Windows.Forms;
 
 namespace Shoppy
 {
-    public partial class AddItem : Form
+    public partial class AddandEditItem : Form
     {
+        bool isEditMode = false;
+        bool isAdmin = false;
+
         SubmittedItem Entry = new SubmittedItem();
-        public AddItem()
+        public AddandEditItem()
         {
             InitializeComponent();
         }
@@ -28,7 +31,22 @@ namespace Shoppy
            
         }
 
-        public void SubmitEntry(SubmittedItem entry)
+        public void EditEntry(SetItem item)
+        {
+            isEditMode = true;
+            NameText.Text = item.name;
+            PrizeText.Text = item.price.ToString();
+            QuantityText.Text = item.quantity.ToString();
+            CategoryText.Text = item.category;
+            DescryptionText.Text = item.description;
+            if (item.imagePath != null)
+            {
+                pictureBox1.Image = new Bitmap(item.imagePath);
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+        }
+
+        public void SubmitEntry(Item entry)
         {
             entry.name = NameText.Text;
             entry.price = double.Parse(PrizeText.Text);
@@ -37,9 +55,8 @@ namespace Shoppy
             entry.description = DescryptionText.Text;
             if (pictureBox1.Image != null)
             {
-                entry.imagePath = "@image/placeholder.jpg"; // Placeholder text
+                entry.imagePath = "@image/placeholder.jpg";
             }
-            ConfirmEntry(entry);
         }
 
         public void ConfirmEntry(SubmittedItem entry)
@@ -51,6 +68,11 @@ namespace Shoppy
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (isEditMode == true)
+            {
+                MessageBox.Show("Editing items is not supported yet.");
+                return;
+            }
             SubmitEntry(Entry);
             this.Close();
         }

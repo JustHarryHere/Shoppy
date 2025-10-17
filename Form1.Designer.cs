@@ -68,9 +68,9 @@
             // 
             textBox1.AcceptsReturn = true;
             textBox1.Font = new Font("Segoe UI", 15.25F);
-            textBox1.Location = new Point(3, 12);
+            textBox1.Location = new Point(3, 55);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(271, 35);
+            textBox1.Size = new Size(333, 35);
             textBox1.TabIndex = 4;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
@@ -86,7 +86,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(0, 111);
+            button2.Location = new Point(0, 585);
             button2.Name = "button2";
             button2.Size = new Size(343, 53);
             button2.TabIndex = 2;
@@ -97,7 +97,7 @@
             // button3
             // 
             button3.Image = Properties.Resources.More1;
-            button3.Location = new Point(289, 12);
+            button3.Location = new Point(3, 12);
             button3.Name = "button3";
             button3.Size = new Size(47, 39);
             button3.TabIndex = 1;
@@ -106,7 +106,7 @@
             // 
             // button1
             // 
-            button1.Font = new Font("Perpetua Titling MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Rockwell", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(0, 632);
             button1.Name = "button1";
             button1.Size = new Size(343, 53);

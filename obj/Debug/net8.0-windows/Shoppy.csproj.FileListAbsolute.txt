@@ -14,7 +14,6 @@ C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\refint\Shoppy.dll
 C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.pdb
 C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.genruntimeconfig.cache
 C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\ref\Shoppy.dll
-C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.AddItem.resources
 C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.sourcelink.json
 C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.Form2.resources
 C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.Properties.Resources.resources
@@ -36,3 +35,14 @@ C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\image\TheBends.jpg
 C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\image\UNDERTALE.jpg
 C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\image\placeholder.jpg
 C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\data\items.json
+C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\image\Hades.jpg
+C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\image\OKComputer.jpg
+C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\image\Banana.jpg
+C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\image\Oranges.jpg
+C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\image\Twilight.jpg
+C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\image\TwinFantasy.jpg
+C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\image\Grapes.jpg
+C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\image\Maus.jpg
+C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\image\Minecraft.jpg
+C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\image\Terraria.jpg
+C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.AddandEditItem.resources

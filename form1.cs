@@ -16,109 +16,14 @@ namespace Shoppy
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
             List<SetItem> Loaded = JsonManager.OpenItemsFromJson(@"data\items.json");
-            items.ConvertlisttoAvailableItems(Loaded);
-
-            SetItem Sybau = new SetItem("Sybau", 69.42, 69, "Sybau", "Sybau", @"image\Sybau.jpg");
-            items.Add(Sybau); 
-
-            SetItem DiscoElysium = new SetItem(
-                "Disco Elysium the final cut",
-                39.99,
-                10,
-                "Game",
-                "Disco Elysium is a 2019 role-playing video game developed and published by ZA/UM.",
-                @"image\DiscoElysium.jpg"); items.Add(DiscoElysium);
-
-            SetItem HollowKnight = new SetItem(
-                "Hollow Knight",
-                39.99,
-                10,
-                "Game",
-                "Forge your own path in Hollow Knight! An epic action adventure through a vast ruined kingdom of insects and heroes. Explore twisting caverns, battle tainted creatures and befriend bizarre bugs, all in a classic, hand-drawn 2D style.",
-                @"image\HollowKnight.jpg"); items.Add(HollowKnight);
-
-            SetItem MBDTF = new SetItem(
-                "My Beautiful Dark Twisted Fantasy",
-                39.99,
-                10,
-                "Music",
-                "My Beautiful Dark Twisted Fantasy is the fifth studio album by the American rapper Kanye West. It was released by Def Jam Recordings and Roc-A-Fella Records on November 22, 2010",
-                @"image\MBDTF.jpg"); items.Add(MBDTF);
-
-            SetItem GoWR = new SetItem(
-                "Disco Elysium the final cut",
-                39.99,
-                10,
-                "Game",
-                "Embark on an epic and heartfelt journey as Kratos and Atreus struggle with holding on and letting go. Against a backdrop of Norse Realms torn asunder by the fury of the Aesir, they’ve been trying their utmost to undo the end times. But despite their best efforts, Fimbulwinter presses onward. Witness the changing dynamic of the father-son relationship as they fight for survival; Atreus thirsts for knowledge to help him understand the prophecy of “Loki”, as Kratos struggles to break free of his past and be the father his son needs. See for yourself how fate will force a choice upon them: between their own safety or the safety of the realms. All the while, hostile Asgardian forces assemble.",
-                @"image\GoWR.jpg"); items.Add(GoWR);
-
-            SetItem CryVinyl = new SetItem(
-                "Cry - Cigarrete After Sex Vinyl",
-                39.99,
-                10,
-                "Music",
-                "Cry is the second studio album by American ambient pop band Cigarettes After Sex, released through Partisan Records on October 25, 2019. It was preceded by the single \"Heavenly\".",
-                @"image\CryVinyl.jpg"); items.Add(CryVinyl);
-
-            SetItem UNDERTALE = new SetItem(
-                "UNDERTALE",
-                39.99,
-                10,
-                "Game",
-                "Undertale is a 2015 role-playing video game created by American indie developer Toby Fox. The player controls a child who has fallen into the Underground: a large, secluded region under the surface of the Earth, separated by a magical barrier. The player meets various monsters during the journey back to the surface, some of which may engage in combat. The combat system involves the player navigating through mini-bullet hell attacks by the opponent. They can opt to appease monsters in order to spare them instead of killing them. These choices affect the game, with the dialogue, characters, and story changing based on outcomes.",
-                @"image\UNDERTALE.jpg"); items.Add(UNDERTALE);
-
-
-            SetItem TheBends = new SetItem(
-                 "The Bends Vinyl",
-                 34.95,
-                 7,
-                 "Music",
-                 "The Bends by Radiohead now released in vinyl form",
-                 @"C:\Users\user\source\repos\Shoppy\image\TheBends.jpg"
-             ); items.Add(TheBends);
-
-            SetItem NintendoSwitch = new SetItem(
-                "Nintendo Switch",
-                90,
-                7,
-                "Technology",
-                "The best selling game console of all time",
-                @"C:\Users\user\source\repos\Shoppy\image\NintendoSwitch.jpg"
-            ); items.Add(NintendoSwitch);
-
-            SetItem StardewValley = new SetItem(
-                "Stardew Valley",
-                14.99,
-                7,
-                "Game",
-                "Stardew Valley is an indie cozy farming simulator developed by ConcernedApe originally exclusively on PC and have now been released on multiple platforms. The games allow for multiplayer and gets free updates from the dev",
-                @"image\StardewValley.jpg"
-            ); items.Add(StardewValley);
-
-            SetItem Apple = new SetItem(
-                "Apple",
-                90,
-                7,
-                "Food",
-                "A freshly picked apple from the Just_Orchard",
-                @"C:\Users\user\source\repos\Shoppy\image\Apple.jpg"
-            ); items.Add(Apple);
-
-            SetItem CannedBeans = new SetItem(
-                "Canned Beans",
-                4.89,
-                7,
-                "Food",
-                "Classic Heinz beans, perfect part of a perfect british breakfast.",
-                @"C:\Users\user\source\repos\Shoppy\image\CannedBeans.jpg"
-            );
+            items.ConvertlisttoAvailableItems(Loaded);             
 
             LoadItem(items);
-
+            Panel Popup = SecurityPanel();
+            Popup.Location = splitContainer1.Location;
+            this.Controls.Add(Popup);
+            Popup.BringToFront();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -256,14 +161,19 @@ namespace Shoppy
             form.Controls.Add(itemPanel);
             itemPanel.BringToFront();
         }
+
+        public void ReloadItem()
+        {
+            List<SetItem> Loaded = JsonManager.OpenItemsFromJson(@"data\items.json");
+            items.ConvertlisttoAvailableItems(Loaded);
+            LoadItem(items);
+        }
+
         public void LoadItem(List<Item> items)
         {
             splitContainer1.Panel2.Controls.Clear();
             int X = 10;
             int Y = 10;
-
-            
-
             foreach (var item in items)
             {
                 Panel NewPanel = CreateItemPanel(item);
@@ -281,7 +191,7 @@ namespace Shoppy
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            AddItem ItemAdding = new AddItem();
+            AddandEditItem ItemAdding = new AddandEditItem();
             ItemAdding.Show();
         }
 
@@ -672,6 +582,53 @@ namespace Shoppy
             Panel checkout = Checkout(basket);
             this.Controls.Add(checkout);
             checkout.BringToFront();
+        }
+
+        public Panel SecurityPanel()
+        {
+            Panel panel = new Panel
+            {
+                Size = new Size(1308, 685),
+                BorderStyle = BorderStyle.FixedSingle,
+                BackColor = Color.Silver
+            };
+            Label label = new Label
+            {
+                Text = "Enter Admin Password:",
+                Font = new Font("Arial", 20, FontStyle.Bold),
+                Location = new Point(10, 10),
+                AutoSize = true
+            };
+            TextBox passwordBox = new TextBox
+            {
+                Location = new Point(10, 60),
+                Width = 300,
+                Font = new Font("Arial", 16, FontStyle.Regular),
+                UseSystemPasswordChar = true
+            };
+            Button submitButton = new Button
+            {
+                Text = "Submit",
+                Location = new Point(320, 60),
+                Size = new Size(100, 40)
+            };
+            submitButton.Click += (sender, e) =>
+            {
+                if (passwordBox.Text == "admin123") // Example password check
+                {
+                    MessageBox.Show("Access Granted");
+                    this.Controls.Remove(panel);
+                }
+                else
+                {
+                    MessageBox.Show("Access Denied");
+                    this.Controls.Remove(panel);
+                }
+            };
+            panel.Controls.Add(label);
+            panel.Controls.Add(passwordBox);
+            panel.Controls.Add(submitButton);
+            return panel;
         }
     }
 

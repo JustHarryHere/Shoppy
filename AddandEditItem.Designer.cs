@@ -1,6 +1,6 @@
 ﻿namespace Shoppy
 {
-    partial class AddItem
+    partial class AddandEditItem
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddItem));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddandEditItem));
             NameText = new TextBox();
             button1 = new Button();
             PrizeText = new TextBox();

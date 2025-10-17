@@ -1,22 +1,197 @@
 {
   "AvailableItems": [
     {
-      "name": "Item1",
-      "category": "CategoryA",
-      "price": 10.99,
-      "quantity": 100,
-      "description": "This is a description for Item1.",
-      "imagepath": "placeholder.jpg",
-      "id": 1
+      "name": "Sybau",
+      "price": 69.42,
+      "quantity": 69,
+      "category": "Sybau",
+      "description": "Sybau",
+      "imagePath": "image\\Sybau.jpg"
     },
     {
-      "category": "CategoryB",
-      "description": "This is a description for Item2.",
-      "id": 2,
-      "imagepath": "",
-      "name": "Item2",
-      "price": 15.49,
-      "quantity": 50
+      "name": "Disco Elysium the final cut",
+      "price": 39.99,
+      "quantity": 100,
+      "category": "RPG",
+      "description": "Disco Elysium - The Final Cut is a groundbreaking role playing game. You’re a detective with a unique skill system at your disposal and a whole city to carve your path across. Interrogate unforgettable characters, crack murders or take bribes. Become a hero or an absolute disaster of a human being.",
+      "imagePath": "image\\DiscoElysium.jpg"
+    },
+    {
+      "name": "Hades",
+      "price": 24.99,
+      "quantity": 100,
+      "category": "Game",
+      "description": "Hades is a god-like rogue-like dungeon crawler that combines the best aspects of Supergiant's critically acclaimed titles, including the fast-paced action of Bastion, the rich atmosphere and depth of Transistor, and the character-driven storytelling of Pyre.",
+      "imagePath": "image\\Hades.jpg"
+    },
+    {
+      "name": "Hollow Knight",
+      "price": 14.99,
+      "quantity": 100,
+      "category": "Game",
+      "description": "Forge your own path in Hollow Knight! Explore twisting caverns, ancient cities and deadly wastes. Battle tainted creatures and befriend bizarre bugs, all in a vast ruined kingdom. Hollow Knight is a challenging 2D action adventure through a vast, ruined kingdom of insects and heroes.",
+      "imagePath": "image\\HollowKnight.jpg"
+    },
+    {
+      "name": "the Bends - Radiohead",
+      "price": 11.99,
+      "quantity": 100,
+      "category": "Album",
+      "description": "The Bends is the second studio album by the English rock band Radiohead, released on 13 March 1995 by Parlophone. It was produced by John Leckie, with extra production by Radiohead, Nigel Godrich and Jim Warren. The Bends combines guitar songs and ballads, with more restrained arrangements and cryptic lyrics than Radiohead's debut album, Pablo Honey (1993).",
+      "imagePath": "image\\TheBends.jpg"
+    },
+    {
+      "name": "OK Computer - Radiohead",
+      "price": 12.99,
+      "quantity": 100,
+      "category": "Album",
+      "description": "OK Computer is the third studio album by the English rock band Radiohead, released on 21 May 1997 by Parlophone. The album was recorded in various locations in England and produced by the band and Nigel Godrich.",
+      "imagePath": "image\\OKComputer.jpg"
+    },
+    {
+      "name": "Cry - Cigarette After Sex",
+      "price": 9.99,
+      "quantity": 100,
+      "category": "Album",
+      "description": "Cry is the fourth studio album by American dream pop band Cigarettes",
+      "imagePath": "image\\CryVinyl.jpg"
+    },
+    {
+      "name": "UNDERTALE",
+      "price": 9.99,
+      "quantity": 100,
+      "category": "Game",
+      "description": "Undertale is a 2015 role-playing video game created by American indie developer Toby Fox. The player controls a child who has fallen into the Underground: a large, secluded region under the surface of the Earth, separated by a magical barrier. The player meets various monsters during the journey back to the surface, some of which may engage in combat. The combat system involves the player navigating through mini-bullet hell attacks by the opponent. They can opt to appease monsters in order to spare them instead of killing them. These choices affect the game, with the dialogue, characters, and story changing based on outcomes.",
+      "imagePath": "image\\UNDERTALE.jpg"
+    },
+    {
+      "name": "God of War Ragnarok",
+      "price": 59.99,
+      "quantity": 100,
+      "category": "Game",
+      "description": "Embark on an epic and heartfelt journey as Kratos and Atreus struggle with holding on and letting go. Against a backdrop of Norse Realms torn asunder by the fury of the Aesir, they’ve been trying their utmost to undo the end times. But despite their best efforts, Fimbulwinter presses onward. Witness the changing dynamic of the father-son relationship as they fight for survival; Atreus thirsts for knowledge to help him understand the prophecy of “Loki”, as Kratos struggles to break free of his past and be the father his son needs. See for yourself how fate will force a choice upon them: between their own safety or the safety of the realms. All the while, hostile Asgardian forces assemble.",
+      "imagePath": "image\\GoWR.jpg"
+    },
+    {
+      "name": "My Beautiful Dark Twisted Fantasy - Kanye West",
+      "price": 14.99,
+      "quantity": 100,
+      "category": "Album",
+      "description": "My Beautiful Dark Twisted Fantasy is the fifth studio album by American rapper and producer Kanye West. It was released on November 22, 2010, by Def Jam Recordings and Roc-A-Fella Records. The album features guest appearances from artists such as Jay-Z, Kid Cudi, Pusha T, Rick Ross, Nicki Minaj, and Bon Iver, among others. The production of the album is characterized by its lush and intricate arrangements, incorporating elements of hip-hop, R&B, rock, and orchestral music.",
+      "imagePath": "image\\MBDTF.jpg"
+    },
+    {
+      "name": "Apple",
+      "price": 0.5,
+      "quantity": 200,
+      "category": "Fruit",
+      "description": "A fresh red apple. One of these babies a day keep them doctors away",
+      "imagePath": "image\\Apple.jpg"
+    },
+    {
+      "name": "Banana",
+      "price": 0.3,
+      "quantity": 150,
+      "category": "Fruit",
+      "description": "A ripe yellow banana. Eating 40,000 of these in under 10 minutes get you killed from radiation poisoning, think about that ",
+      "imagePath": "image\\Banana.jpg"
+    },
+    {
+      "name": "Orange",
+      "price": 0.4,
+      "quantity": 180,
+      "category": "Fruit",
+      "description": "The color orange have a tatse. ",
+      "imagePath": "image\\Oranges.jpg"
+    },
+    {
+      "name": "Strawberry",
+      "price": 0.2,
+      "quantity": 300,
+      "category": "Fruit",
+      "description": "A sweet red strawberry.",
+      "imagePath": "image\\Strawberry.jpg"
+    },
+    {
+      "name": "Grapes",
+      "price": 1.5,
+      "quantity": 100,
+      "category": "Fruit",
+      "description": "A bunch of fresh grapes.",
+      "imagePath": "image\\Grapes.jpg"
+    },
+    {
+      "name": "Stardew Valley",
+      "price": 14.99,
+      "quantity": 100,
+      "category": "Game",
+      "description": "Stardew Valley is an open-ended country-life RPG! You've inherited your grandfather's old farm plot in Stardew Valley. Armed with hand-me-down tools and a few coins, you set out to begin your new life. Can you learn to live off the land and turn these overgrown fields into a thriving home? It won't be easy. You'll have to learn to tend crops, raise livestock, go fishing, explore mysterious caves filled with monsters, and socialize with the friendly townspeople.",
+      "imagePath": "image\\StardewValley.jpg"
+    },
+    {
+      "name": "Celeste",
+      "price": 19.99,
+      "quantity": 100,
+      "category": "Game",
+      "description": "Madeline must climb the titular Celeste Mountain, which is filled with various dangers. Along the way, she meets several characters, including a talking bird named Theo, who becomes her friend and companion on her journey. The game features challenging platforming gameplay, with players needing to navigate through various obstacles and hazards to reach the summit of the mountain.",
+      "imagePath": "image\\Celeste.jpg"
+    },
+    {
+      "name": "Twin Fantasy (Mirror to Mirror) - Car Seat Headrest",
+      "price": 13.99,
+      "quantity": 100,
+      "category": "Album",
+      "description": "Twin Fantasy, later re-titled Twin Fantasy (Mirror to Mirror), is the sixth solo album by American indie rock musician Will Toledo, under his alias Car Seat Headrest. Since its release on November 2, 2011, the album has amassed an online cult following, with the internet forums 4chan and Reddit playing major roles in the album's initial success. A re-recording of the album was released via Matador Records on February 16, 2018.",
+      "imagePath": "image\\TwinFantasy.jpg"
+    },
+    {
+      "name": "Twilight - Bôa",
+      "price": 13.99,
+      "quantity": 100,
+      "category": "Album",
+      "description": "Twilight is the reissued version of the 1998 album The Race of a Thousand Camels by English alternative rock band Bôa, released on 21 March 2001 by Pioneer Entertainment. It was later reissued on 7 March 2024 by Boa Recordings.",
+      "imagePath": "image\\Twilight.jpg"
+    },
+    {
+      "name": "Kingdom Come",
+      "price": 19.99,
+      "quantity": 100,
+      "category": "Book",
+      "description": "Winner of five Eisner and Harvey awards, KINGDOM COME is the best-selling graphic novel from acclaimed writer Mark Waid and superstar painter Alex Ross, now back as part of the new DC Black Label line with the four-issue KINGDOM COME epic and more than 150 pages of behind-the-scenes material, including sketches, annotations and the never-before-published original proposal, series treatment, series outline, issue #1 outline and issue #1 script.",
+      "imagePath": "image\\KingdomCome.jpg"
+    },
+    {
+      "name": "Maus",
+      "price": 14.99,
+      "quantity": 100,
+      "category": "Book",
+      "description": "Maus, often published as Maus: A Survivor's Tale, is a graphic novel by American cartoonist Art Spiegelman, serialized from 1980 to 1991. It depicts Spiegelman interviewing his father about his experiences as a Polish Jew and Holocaust survivor. The work employs postmodern techniques, and represents Jews as mice, Germans as cats and Poles as pigs. Critics have classified Maus as memoir, biography, history, fiction, autobiography, or a mix of genres. In 1992, it became the first graphic novel to win a Pulitzer Prize.",
+      "imagePath": "image\\Maus.jpg"
+    },
+    {
+      "name": "Nintendo Switch",
+      "price": 90,
+      "quantity": 10,
+      "category": "Device",
+      "description": "The best selling game console of all time",
+      "imagePath": "image\\NintendoSwitch.jpg"
+    },
+    {
+      "name": "Terraria",
+      "price": 9.99,
+      "quantity": 96,
+      "category": "Game",
+      "description": "Dig, fight, explore, build! Nothing is impossible in this action-packed adventure game. The world is your canvas and the ground itself is your paint.",
+      "imagePath": "image\\Terraria.jpg"
+    },
+    {
+      "name": "Minecraft",
+      "price": 29.99,
+      "quantity": 123,
+      "category": "Game",
+      "description": "Minecraft is a 3D sandbox adventure game developed by Mojang Studios, where players can interact with a fully customizable three-dimensional world made of blocks and entities. Its diverse gameplay options allow players to choose the way they play, creating infinite possibilities.",
+      "imagePath": "image\\Minecraft.jpg"
     }
+
   ]
 }

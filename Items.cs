@@ -18,7 +18,7 @@ namespace Shoppy
         public string imagePath { get; set; }
         public int id {  get; set; }
         public int inbasket = 0;
-        public abstract void SeeItem();
+        public abstract void EditItem();
     }
 
     public class SetItem : Item
@@ -33,106 +33,15 @@ namespace Shoppy
             this.description = description;
             this.imagePath = imagePath;
         }
-        public override void SeeItem()
+        public override void EditItem()
         {
-            // code to display item details
+            Form Editor = new LoginForm();
+
+
         }
         public void DisplayItemInfo()
         {
             
-        }
-    }
-
-    public class SubmittedItem : Item
-    {
-        public SubmittedItem() { }
-
-        public void ItemSettup(string name,double price,int quantity ,string descryption)
-        {
-            this.name = name;
-            this.id+=1;
-            this.price = price;
-            this.quantity = quantity;
-            this.description= descryption;
-
-        }
-        public void SubmitItem()
-        {
-            if (this.name != null && this.price > 0 && this.quantity > 0)
-            {
-                // add the item to the available items list
-                SetItem USI = new SetItem(this.name, this.price, this.quantity, this.category, this.description, this.imagePath);
-            }
-            else
-            {
-                MessageBox.Show("Please make sure all fields are entered to submit item");
-            }
-        }
-        public override void SeeItem()
-        {
-
-            
-            // code to display item details
-        }
-    }
-    public class AvailableItems : List<Item>
-    {
-        public void AddItem(Item item)
-        {
-            if (item.quantity > 0)
-            {
-                this.Add(item);
-            }
-        }
-
-        public List<Item> CategoryFilter(string category)
-        {
-            AvailableItems Itemsofcategory = new AvailableItems();
-            foreach (var item in this)
-            {
-                if (item.category == category)
-                {
-                    Itemsofcategory.Add(item);
-                }
-            }
-            return Itemsofcategory;
-        }
-
-        public void ConvertlisttoAvailableItems(List<SetItem> items)
-        {
-            this.Clear();
-            foreach (var item in items)
-            {
-                if (item.quantity > 0)
-                {
-                    this.Add(item);
-                }
-            }
-        }
-
-        public void ConvertAvIttoList(List<Item> items)
-        {
-            this.Clear();
-            foreach (var item in items)
-            {
-                if (item.quantity > 0)
-                {
-                    this.Add(item);
-                }
-            }
-        }
-
-        public List<Item> SearchItems(string keyword)
-        {
-            AvailableItems SearchResults = new AvailableItems();
-            foreach (var item in this)
-            {
-                if (item.name.Contains(keyword,StringComparison.OrdinalIgnoreCase) ||item.description.Contains(keyword, StringComparison.OrdinalIgnoreCase) ||item.category.Contains(keyword, StringComparison.OrdinalIgnoreCase))
-                {
-                    SearchResults.Add(item);
-                }
-            }
-            return SearchResults;
         }
     }
 
@@ -183,6 +92,24 @@ namespace Shoppy
             var items = OpenItemsFromJson(filePath);
             items.RemoveAll(i => i.id == itemToRemove.id);
             SaveItemsToJson(filePath, items);
+        }
+
+        public static void SaveUsersToJson(string filePath, List<User> users)
+        {
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+            var json = JsonSerializer.Serialize(users, options);
+            File.WriteAllText(filePath, json);
+        }
+
+        public static List<User> OpenUsersFromJson(string filePath)
+        {
+            if (!File.Exists(filePath))
+                return new List<User>();
+            var json = File.ReadAllText(filePath);
+            return JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
         }
     }
 }   
