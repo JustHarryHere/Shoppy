@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             UserName = new TextBox();
-            textBox1 = new TextBox();
+            Password = new TextBox();
             pictureBox1 = new PictureBox();
-            button1 = new Button();
+            LogIn = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -44,49 +44,49 @@
             UserName.Size = new Size(200, 36);
             UserName.TabIndex = 0;
             // 
-            // textBox1
+            // Password
             // 
-            textBox1.Font = new Font("Rockwell", 18F, FontStyle.Bold);
-            textBox1.Location = new Point(105, 397);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Password";
-            textBox1.Size = new Size(200, 36);
-            textBox1.TabIndex = 1;
+            Password.Font = new Font("Rockwell", 18F, FontStyle.Bold);
+            Password.Location = new Point(105, 397);
+            Password.Name = "Password";
+            Password.PlaceholderText = "Password";
+            Password.Size = new Size(200, 36);
+            Password.TabIndex = 1;
             // 
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = Properties.Resources.Poster3;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.ImageLocation = "image\\\\Poster.jpg";
+            pictureBox1.ImageLocation = "";
             pictureBox1.Location = new Point(0, -2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(410, 600);
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
-            // button1
+            // LogIn
             // 
-            button1.Font = new Font("Rockwell", 18F, FontStyle.Bold);
-            button1.Location = new Point(277, 537);
-            button1.Name = "button1";
-            button1.Size = new Size(121, 46);
-            button1.TabIndex = 3;
-            button1.Text = "Log in";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            LogIn.Font = new Font("Rockwell", 18F, FontStyle.Bold);
+            LogIn.Location = new Point(277, 521);
+            LogIn.Name = "LogIn";
+            LogIn.Size = new Size(121, 46);
+            LogIn.TabIndex = 3;
+            LogIn.Text = "Log in";
+            LogIn.UseVisualStyleBackColor = true;
+            LogIn.Click += button1_Click;
             // 
-            // Form2
+            // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(410, 595);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
+            Controls.Add(LogIn);
+            Controls.Add(Password);
             Controls.Add(UserName);
             Controls.Add(pictureBox1);
-            Name = "Form2";
-            Text = "Form2";
-            Load += Form2_Load;
+            Name = "LoginForm";
+            Text = "LoginForm";
+            Load += LoginForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -95,8 +95,8 @@
         #endregion
 
         private TextBox UserName;
-        private TextBox textBox1;
+        private TextBox Password;
         private PictureBox pictureBox1;
-        private Button button1;
+        private Button LogIn;
     }
 }

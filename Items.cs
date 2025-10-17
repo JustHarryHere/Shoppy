@@ -57,61 +57,6 @@ namespace Shoppy
             this.Remove(item);
         }
     }
-
-    public static class JsonManager
-    {
-        public static void SaveItemsToJson(string filePath, List<SetItem> items)
-        {
-            var options = new JsonSerializerOptions
-            {
-                WriteIndented = true
-            };
-            var json = JsonSerializer.Serialize(items, options);
-            File.WriteAllText(filePath, json);
-        }
-        public static List<SetItem> OpenItemsFromJson(string filePath)
-        {
-            if (!File.Exists(filePath))
-                return new List<SetItem>();
-
-            var json = File.ReadAllText(filePath);
-            using var doc = JsonDocument.Parse(json);
-            var itemsElement = doc.RootElement.GetProperty("AvailableItems");
-            return JsonSerializer.Deserialize<List<SetItem>>(itemsElement.GetRawText()) ?? new List<SetItem>();
-        }
-
-        public static void AddItemtoJson(string filePath, SetItem newItem)
-        {
-            var items = OpenItemsFromJson(filePath);
-            items.Add(newItem);
-            SaveItemsToJson(filePath, items);
-        }
-
-        public static void RemoveItemFromJson(string filePath, SetItem itemToRemove)
-        {
-            var items = OpenItemsFromJson(filePath);
-            items.RemoveAll(i => i.id == itemToRemove.id);
-            SaveItemsToJson(filePath, items);
-        }
-
-        public static void SaveUsersToJson(string filePath, List<User> users)
-        {
-            var options = new JsonSerializerOptions
-            {
-                WriteIndented = true
-            };
-            var json = JsonSerializer.Serialize(users, options);
-            File.WriteAllText(filePath, json);
-        }
-
-        public static List<User> OpenUsersFromJson(string filePath)
-        {
-            if (!File.Exists(filePath))
-                return new List<User>();
-            var json = File.ReadAllText(filePath);
-            return JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
-        }
-    }
 }   
 
 

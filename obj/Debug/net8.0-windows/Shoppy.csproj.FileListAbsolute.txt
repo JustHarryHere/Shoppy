@@ -15,7 +15,6 @@ C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.pdb
 C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.genruntimeconfig.cache
 C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\ref\Shoppy.dll
 C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.sourcelink.json
-C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.Form2.resources
 C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.Properties.Resources.resources
 C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\image\Apple.jpg
 C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\image\BMXFiendTypeA.jpg
@@ -46,3 +45,8 @@ C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\image\Maus.jpg
 C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\image\Minecraft.jpg
 C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\image\Terraria.jpg
 C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.AddandEditItem.resources
+C:\Users\user\source\repos\Shoppy\obj\Debug\net8.0-windows\Shoppy.LoginForm.resources
+C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\image\Poster.jpg
+C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\data\users.json
+C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\data\admins.json
+C:\Users\user\source\repos\Shoppy\bin\Debug\net8.0-windows\image\SearchIcon.jpg

@@ -12,8 +12,6 @@ namespace Shoppy
 {
     public partial class AddandEditItem : Form
     {
-        bool isEditMode = false;
-        bool isAdmin = false;
 
         SubmittedItem Entry = new SubmittedItem();
         public AddandEditItem()
@@ -33,7 +31,6 @@ namespace Shoppy
 
         public void EditEntry(SetItem item)
         {
-            isEditMode = true;
             NameText.Text = item.name;
             PrizeText.Text = item.price.ToString();
             QuantityText.Text = item.quantity.ToString();
@@ -44,6 +41,22 @@ namespace Shoppy
                 pictureBox1.Image = new Bitmap(item.imagePath);
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
+            Button button2 = new Button()
+            {
+                Location = button1.Location,
+                Text = "Confirm Edit",
+                Size = button1.Size
+            };
+            button2.Click += (s, e) =>
+            {
+                SubmitEntry(item);
+                JsonManager.UpdateItemInJson(item);
+                MessageBox.Show("Item successfully edited.");
+                this.Close();
+            };
+            this.Controls.Add(button2);
+
+            button1.Visible = false;    
         }
 
         public void SubmitEntry(Item entry)
@@ -53,31 +66,42 @@ namespace Shoppy
             entry.quantity = int.Parse(QuantityText.Text);
             entry.category = CategoryText.Text;
             entry.description = DescryptionText.Text;
-            if (pictureBox1.Image != null)
+            if (pictureBox1.Image == null)
             {
-                entry.imagePath = "@image/placeholder.jpg";
+                entry.imagePath = "image\\placeholder.jpg";
             }
+            
         }
 
         public void ConfirmEntry(SubmittedItem entry)
         {
             SetItem newItem = new SetItem(entry.name, entry.price, entry.quantity, entry.category, entry.description, entry.imagePath);
-            JsonManager.AddItemtoJson(@"data\items.json", newItem);
+            JsonManager.AddItemtoJson(newItem);
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (isEditMode == true)
-            {
-                MessageBox.Show("Editing items is not supported yet.");
-                return;
-            }
             SubmitEntry(Entry);
+            ConfirmEntry(Entry);
             this.Close();
         }
 
+        private void QuantityText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != (char)46)
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void PrizeText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != (char)46)
+            {
+                e.Handled = true;
+            }
+        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

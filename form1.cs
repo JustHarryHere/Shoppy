@@ -7,23 +7,27 @@ namespace Shoppy
     public partial class Form1 : Form
     {
         AvailableItems items = new AvailableItems();
-
+        public bool isAdmin = false;
+        public int UserID;
         Basket basket = new Basket();
-        public Form1()
+        public Form1(User user)
         {
+            if (user is Admin)
+            {
+                isAdmin = true;
+            }
+            UserID = user.UserId;
             InitializeComponent();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            List<SetItem> Loaded = JsonManager.OpenItemsFromJson(@"data\items.json");
+
+            List<SetItem> Loaded = JsonManager.OpenItemsFromJson();
             items.ConvertlisttoAvailableItems(Loaded);             
 
             LoadItem(items);
-            Panel Popup = SecurityPanel();
-            Popup.Location = splitContainer1.Location;
-            this.Controls.Add(Popup);
-            Popup.BringToFront();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -164,7 +168,7 @@ namespace Shoppy
 
         public void ReloadItem()
         {
-            List<SetItem> Loaded = JsonManager.OpenItemsFromJson(@"data\items.json");
+            List<SetItem> Loaded = JsonManager.OpenItemsFromJson();
             items.ConvertlisttoAvailableItems(Loaded);
             LoadItem(items);
         }
@@ -193,8 +197,13 @@ namespace Shoppy
         {
             AddandEditItem ItemAdding = new AddandEditItem();
             ItemAdding.Show();
+            ItemAdding.FormClosed += ItemAdding_FormClosed;
         }
 
+        private void ItemAdding_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            ReloadItem();
+        }
 
         public Panel Seeitem(Item item)
         {
@@ -306,12 +315,40 @@ namespace Shoppy
                 Size = new Size(39, 39),
             };
 
+            Button Delete = new Button
+            {
+                Text = "Delete Item",
+                Location = new Point(10, 634),
+                Size = new Size(113, 39),
+            };
 
             Button Remove = new Button
             {
                 Text = "Remove Item",
                 Location = new Point(1051, 634),
                 Size = new Size(113, 39),
+            };
+
+            Button Edit = new Button
+            {
+                Text = "Edit Item",
+                Location = new Point(1150, 50),
+                Size = new Size(113, 39),
+            };
+
+            Edit.Click += (sender, e) =>
+            {
+                AddandEditItem editor = new AddandEditItem();
+                editor.EditEntry((SetItem)item);
+                editor.Show();
+            };
+
+            Delete.Click += (sender, e) =>
+            {
+                JsonManager.RemoveItemFromJson((SetItem)item);
+                MessageBox.Show($"{item.name} deleted.");
+                ReloadItem();
+                this.Controls.Remove(panel);
             };
 
             panel.Controls.Add(pictureBox);
@@ -328,6 +365,12 @@ namespace Shoppy
             AdjustPanel.Controls.Add(More);
             AdjustPanel.Controls.Add(Less);
             panel.Controls.Add(AdjustPanel);
+
+            if (isAdmin)
+            {
+                panel.Controls.Add(Remove);
+                panel.Controls.Add(Edit);
+            }
 
             BuyButton.Click += (sender, e) =>
             {
@@ -480,6 +523,8 @@ namespace Shoppy
                 Location = new Point(1051, 634),
                 Size = new Size(113, 39),
             };
+
+
             panel.Controls.Add(nameLabel);
             panel.Controls.Add(priceLabel);
             AdjustPanel.Controls.Add(AmountBox);
@@ -489,13 +534,14 @@ namespace Shoppy
             panel.Controls.Add(Remove);
             panel.Controls.Add(AdjustPanel);
 
-            PictureBox pictureBox = new PictureBox
-            {
-                ImageLocation = item.imagePath,
-                Location = new Point(10, 10),
-                Size = new Size(180, 180),
-                SizeMode = PictureBoxSizeMode.Zoom
-            };
+
+                PictureBox pictureBox = new PictureBox
+                {
+                    ImageLocation = item.imagePath,
+                    Location = new Point(10, 10),
+                    Size = new Size(180, 180),
+                    SizeMode = PictureBoxSizeMode.Zoom
+                };
             panel.Controls.Add(pictureBox);
 
             return panel;

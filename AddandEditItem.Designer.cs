@@ -78,7 +78,7 @@
             DescryptionText.Name = "DescryptionText";
             DescryptionText.PlaceholderText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,";
             DescryptionText.Size = new Size(257, 88);
-            DescryptionText.TabIndex = 3;
+            DescryptionText.TabIndex = 4;
             DescryptionText.TextChanged += DescryptionText_TextChanged;
             // 
             // QuantityText
@@ -87,7 +87,8 @@
             QuantityText.Name = "QuantityText";
             QuantityText.PlaceholderText = "0";
             QuantityText.Size = new Size(257, 23);
-            QuantityText.TabIndex = 4;
+            QuantityText.TabIndex = 3;
+            QuantityText.KeyPress += QuantityText_KeyPress;
             // 
             // pictureBox1
             // 
@@ -153,7 +154,7 @@
             label5.TabIndex = 11;
             label5.Text = "Category";
             // 
-            // AddItem
+            // AddandEditItem
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -171,7 +172,7 @@
             Controls.Add(PrizeText);
             Controls.Add(button1);
             Controls.Add(NameText);
-            Name = "AddItem";
+            Name = "AddandEditItem";
             Text = "AddItem";
             Load += AddItem_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

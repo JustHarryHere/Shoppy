@@ -10,7 +10,14 @@ namespace Shoppy
         public string Username { get; set; }
         public string Password { get; set; }
         public Basket Basket { get; set; }
-        public int SecurityLevel { get; set; }
+
+        public User()
+        {
+            UserId = 0;
+            Username = string.Empty;
+            Password = string.Empty;
+            Basket = new Basket();
+        }
 
         public User(int userId, string username, string password)
         {
@@ -18,19 +25,6 @@ namespace Shoppy
             Username = username;
             Password = password;
             Basket = new Basket();
-            SecurityLevel = 0;
-        }
-
-        public void SaveUser()
-        {
-            // Code to save user details to a database or file
-        }
-
-        public void SignUp(int userid, string username, string password)
-        {
-            User user = new User(userid, username, password);
-            user.SaveUser();
-
         }
 
 
@@ -38,6 +32,10 @@ namespace Shoppy
 
     public class Admin : User
     {
+        public Admin() : base()
+        {
+        }
+
         public Admin(int userId, string username, string password): base(userId, username, password)
         { 
             UserId = userId;
@@ -48,7 +46,7 @@ namespace Shoppy
 
         public void RemoveItem(SetItem item)
         {
-            JsonManager.RemoveItemFromJson(@"data\items.json", item);
+            JsonManager.RemoveItemFromJson(item);
         }
     }
 

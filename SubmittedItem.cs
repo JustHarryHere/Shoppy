@@ -24,7 +24,7 @@ namespace Shoppy
             if (this.name != null && this.price > 0 && this.quantity > 0)
             {
                 SetItem USI = new SetItem(this.name, this.price, this.quantity, this.category, this.description, this.imagePath);
-                JsonManager.AddItemtoJson(@"data\items.json", USI);
+                JsonManager.AddItemtoJson(USI);
             }
             else
             {

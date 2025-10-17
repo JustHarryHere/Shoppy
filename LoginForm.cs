@@ -24,31 +24,58 @@ namespace Shoppy
 
         private void button1_Click(object sender, EventArgs e)
         {
-            User user = Authenticate(username.Text, passwordTextBox.Text);
+            User user = Authenticate(UserName.Text, Password.Text);
+            if (user != null)
+            {
+                MessageBox.Show("Login Successful");
+                Form1 mainForm = new Form1(user);
+                mainForm.FormClosed += new FormClosedEventHandler(mainForm_FormClosed);
+                mainForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Login Failed");
+            }
+        }
+
+
+
+        void mainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
 
         public static User Authenticate(string username, string password)
         {
-            var users = JsonManager.OpenUsersFromJson("User.json");
+            MessageBox.Show("Authenticating user: " + username);
+            var users = JsonManager.OpenNormalUsersFromJson("data\\users.json");
+            var admins = JsonManager.OpenAdminsFromJson("data\\admins.json");
             var user = users.FirstOrDefault(u => u.Username == username);
-            if (user != null && VerifyPassword(password, user.Password))
+            if (user != null && VerifyPassword(password, user))
             {
                 return user;
             }
+            var admin = admins.FirstOrDefault(a => a.Username == username);
+            if (admin != null && VerifyPassword(password, admin))
+            {
+                return admin;
+            }
+            MessageBox.Show("User not found or incorect password");
             return null;
         }
 
-        private static bool VerifyPassword(string enteredPassword, string storedHash)
+        private static bool VerifyPassword(string enteredPassword, User user)
         {
-            // Replace with your hash verification logic
-            return HashPassword(enteredPassword) == storedHash;
-        }
-
-        private static string HashPassword(string password)
-        {
-            using var sha = System.Security.Cryptography.SHA256.Create();
-            var bytes = sha.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
-            return Convert.ToBase64String(bytes);
+            if(user.Password == enteredPassword)
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Incorrect Password");
+                return false;
+            }
         }
     }
 }
