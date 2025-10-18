@@ -65,6 +65,29 @@ namespace Shoppy
             }
             return SearchResults;
         }
+
+        public List<string> GetCategories()
+        {
+            HashSet<string> categories = new HashSet<string>();
+            foreach (var item in this)
+            {
+                categories.Add(item.category);
+            }
+            return categories.ToList();
+        }
+
+        public List<Item> IdFilter(int id)
+        {
+            AvailableItems items = new AvailableItems();
+            foreach (var item in this)
+            {
+                if (item.id == id)
+                {
+                    items.Add(item);
+                }
+            }
+            return items;
+        }
     }
 }
 

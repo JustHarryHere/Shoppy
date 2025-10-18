@@ -12,6 +12,17 @@ namespace Shoppy
             items = new List<Item>();
         }
 
+        public void ClearBasket()
+        {
+            foreach (var item in items)
+            {
+                item.quantity -= item.inbasket;
+                JsonManager.UpdateItemInJson((SetItem)item);
+                item.inbasket = 0;
+            }
+            items.Clear();
+        }
+
         public void AddItem(Item item, int amount)
         {
             if (amount <= 0)

@@ -41,6 +41,7 @@
             label4 = new Label();
             CategoryText = new TextBox();
             label5 = new Label();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -70,13 +71,14 @@
             PrizeText.PlaceholderText = "00.00$";
             PrizeText.Size = new Size(77, 23);
             PrizeText.TabIndex = 2;
+            PrizeText.KeyPress += PrizeText_KeyPress;
             // 
             // DescryptionText
             // 
             DescryptionText.Location = new Point(41, 261);
             DescryptionText.Multiline = true;
             DescryptionText.Name = "DescryptionText";
-            DescryptionText.PlaceholderText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit,";
+            DescryptionText.PlaceholderText = "Lorem ipsum dolor sit amet";
             DescryptionText.Size = new Size(257, 88);
             DescryptionText.TabIndex = 4;
             DescryptionText.TextChanged += DescryptionText_TextChanged;
@@ -154,12 +156,23 @@
             label5.TabIndex = 11;
             label5.Text = "Category";
             // 
+            // button2
+            // 
+            button2.Location = new Point(41, 385);
+            button2.Name = "button2";
+            button2.Size = new Size(96, 41);
+            button2.TabIndex = 12;
+            button2.Text = "Cancel";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // AddandEditItem
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             ControlBox = false;
+            Controls.Add(button2);
             Controls.Add(label5);
             Controls.Add(CategoryText);
             Controls.Add(label4);
@@ -194,5 +207,6 @@
         private Label label4;
         private TextBox CategoryText;
         private Label label5;
+        private Button button2;
     }
 }

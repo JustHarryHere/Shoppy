@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             splitContainer1 = new SplitContainer();
             button5 = new Button();
             button2 = new Button();
@@ -36,7 +35,6 @@
             button4 = new Button();
             button3 = new Button();
             button1 = new Button();
-            imageList1 = new ImageList(components);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.SuspendLayout();
@@ -79,11 +77,12 @@
             // 
             // button2
             // 
-            button2.Location = new Point(282, 125);
+            button2.BackgroundImage = Properties.Resources.Basket;
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.Location = new Point(12, 66);
             button2.Name = "button2";
             button2.Size = new Size(55, 53);
             button2.TabIndex = 2;
-            button2.Text = "button2";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click_1;
             // 
@@ -100,7 +99,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(3, 125);
+            button4.Location = new Point(73, 66);
             button4.Name = "button4";
             button4.Size = new Size(56, 53);
             button4.TabIndex = 3;
@@ -130,12 +129,6 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // imageList1
-            // 
-            imageList1.ColorDepth = ColorDepth.Depth32Bit;
-            imageList1.ImageSize = new Size(16, 16);
-            imageList1.TransparentColor = Color.Transparent;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -158,7 +151,6 @@
         #endregion
 
         private SplitContainer splitContainer1;
-        private ImageList imageList1;
         private Button button1;
         private Button button3;
         private Button button4;

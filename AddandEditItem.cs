@@ -12,10 +12,11 @@ namespace Shoppy
 {
     public partial class AddandEditItem : Form
     {
-
+        public int ID;
         SubmittedItem Entry = new SubmittedItem();
-        public AddandEditItem()
+        public AddandEditItem(int Id)
         {
+            ID = Id;
             InitializeComponent();
         }
 
@@ -26,7 +27,7 @@ namespace Shoppy
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         public void EditEntry(SetItem item)
@@ -56,13 +57,41 @@ namespace Shoppy
             };
             this.Controls.Add(button2);
 
-            button1.Visible = false;    
+            button1.Visible = false;
         }
 
         public void SubmitEntry(Item entry)
         {
             entry.name = NameText.Text;
-            entry.price = double.Parse(PrizeText.Text);
+            if (String.IsNullOrWhiteSpace(NameText.Text))
+            {
+                MessageBox.Show("Please enter a valid name.");
+                return;
+            }
+
+
+            if (string.IsNullOrWhiteSpace(PrizeText.Text) || !double.TryParse(PrizeText.Text, out double price))
+            {
+                MessageBox.Show("Please enter a valid price.");
+                return;
+            }
+            entry.price = price;
+
+            if (string.IsNullOrWhiteSpace(QuantityText.Text) || int.Parse(QuantityText.Text) < 0)
+            {
+                MessageBox.Show("Please enter a valid quantity.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(CategoryText.Text))
+            {
+                MessageBox.Show("Please enter a valid quantity.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(DescryptionText.Text))
+            {
+                MessageBox.Show("Please enter a description");
+                return;
+            }
             entry.quantity = int.Parse(QuantityText.Text);
             entry.category = CategoryText.Text;
             entry.description = DescryptionText.Text;
@@ -70,10 +99,11 @@ namespace Shoppy
             {
                 entry.imagePath = "image\\placeholder.jpg";
             }
-            
+            this.Close();
+
         }
 
-        public void ConfirmEntry(SubmittedItem entry)
+        public void ConfirmEntry(SubmittedItem entry, int UserId)
         {
             SetItem newItem = new SetItem(entry.name, entry.price, entry.quantity, entry.category, entry.description, entry.imagePath);
             JsonManager.AddItemtoJson(newItem);
@@ -82,9 +112,9 @@ namespace Shoppy
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SubmitEntry(Entry);
-            ConfirmEntry(Entry);
-            this.Close();
+            if (pictureBox1.Image != null)
+                SubmitEntry(Entry);
+            ConfirmEntry(Entry, ID);
         }
 
         private void QuantityText_KeyPress(object sender, KeyPressEventArgs e)
@@ -125,6 +155,11 @@ namespace Shoppy
                 MessageBox.Show("Please enter a description");
                 return;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

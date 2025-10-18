@@ -1,6 +1,6 @@
 using System.Windows.Forms;
 using Shoppy;
-using System.Text.Json; 
+using System.Text.Json;
 
 namespace Shoppy
 {
@@ -25,7 +25,7 @@ namespace Shoppy
         {
 
             List<SetItem> Loaded = JsonManager.OpenItemsFromJson();
-            items.ConvertlisttoAvailableItems(Loaded);             
+            items.ConvertlisttoAvailableItems(Loaded);
 
             LoadItem(items);
         }
@@ -48,6 +48,11 @@ namespace Shoppy
         public void Search(string searchTerm)
         {
             LoadItem(items.SearchItems(searchTerm));
+        }
+
+        public void ManageItem()
+        {
+            LoadItem(items);
         }
         public Panel CreateItemPanel(Item item)
         {
@@ -195,7 +200,7 @@ namespace Shoppy
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            AddandEditItem ItemAdding = new AddandEditItem();
+            AddandEditItem ItemAdding = new AddandEditItem(UserID);
             ItemAdding.Show();
             ItemAdding.FormClosed += ItemAdding_FormClosed;
         }
@@ -219,7 +224,8 @@ namespace Shoppy
                 Text = item.name,
                 Font = new Font("Arial", 20, FontStyle.Bold),
                 Location = new Point(670, 10),
-                AutoSize = true,
+                Size = new Size(500, 40),
+                AutoSize = false,
                 AutoEllipsis = true
             };
 
@@ -286,7 +292,7 @@ namespace Shoppy
             {
                 Size = new Size(114, 40),
                 Location = new Point(1174, 585),
-                
+
                 BackColor = Color.Silver
             };
 
@@ -318,7 +324,7 @@ namespace Shoppy
             Button Delete = new Button
             {
                 Text = "Delete Item",
-                Location = new Point(10, 634),
+                Location = new Point(1174, 130),
                 Size = new Size(113, 39),
             };
 
@@ -332,15 +338,20 @@ namespace Shoppy
             Button Edit = new Button
             {
                 Text = "Edit Item",
-                Location = new Point(1150, 50),
+                Location = new Point(1174, 60),
                 Size = new Size(113, 39),
             };
 
             Edit.Click += (sender, e) =>
             {
-                AddandEditItem editor = new AddandEditItem();
-                editor.EditEntry((SetItem)item);
-                editor.Show();
+                if(item.id == UserID)
+                {
+                    item.EditItem();
+                }
+                else
+                {
+
+                }
             };
 
             Delete.Click += (sender, e) =>
@@ -366,9 +377,9 @@ namespace Shoppy
             AdjustPanel.Controls.Add(Less);
             panel.Controls.Add(AdjustPanel);
 
-            if (isAdmin)
+            if (isAdmin||UserID == item.id)
             {
-                panel.Controls.Add(Remove);
+                panel.Controls.Add(Delete);
                 panel.Controls.Add(Edit);
             }
 
@@ -395,6 +406,7 @@ namespace Shoppy
             Back.Click += (sender, e) =>
             {
                 this.Controls.Remove(panel);
+                ReloadItem();
             };
 
             More.Click += (sender, e) =>
@@ -452,13 +464,13 @@ namespace Shoppy
                 Location = new Point(200, 10),
                 AutoSize = true,
                 AutoEllipsis = true
-               
+
             };
             Label priceLabel = new Label
             {
                 Text = $"Price: {item.price:C2}",
                 Font = new Font("Arial", 16, FontStyle.Bold),
-                Location = new Point(200,50),
+                Location = new Point(200, 50),
                 ForeColor = Color.Green,
                 AutoSize = true
             };
@@ -466,7 +478,7 @@ namespace Shoppy
             Label categoryLabel = new Label
             {
                 Text = $"Category: {item.category}",
-                Location = new Point(200,60),
+                Location = new Point(200, 60),
                 AutoSize = true
             };
 
@@ -498,7 +510,7 @@ namespace Shoppy
             Button Less = new Button
             {
                 Text = "-",
-                Location = new Point(0,0),
+                Location = new Point(0, 0),
                 Font = new Font("Arial", 14, FontStyle.Regular),
                 Size = new Size(39, 39),
             };
@@ -535,13 +547,13 @@ namespace Shoppy
             panel.Controls.Add(AdjustPanel);
 
 
-                PictureBox pictureBox = new PictureBox
-                {
-                    ImageLocation = item.imagePath,
-                    Location = new Point(10, 10),
-                    Size = new Size(180, 180),
-                    SizeMode = PictureBoxSizeMode.Zoom
-                };
+            PictureBox pictureBox = new PictureBox
+            {
+                ImageLocation = item.imagePath,
+                Location = new Point(10, 10),
+                Size = new Size(180, 180),
+                SizeMode = PictureBoxSizeMode.Zoom
+            };
             panel.Controls.Add(pictureBox);
 
             return panel;
@@ -598,11 +610,10 @@ namespace Shoppy
             Panel Bottompanel = new Panel
             {
                 Size = new Size(1308, 50),
-           
+
                 Location = new Point(0, 635),
                 BorderStyle = BorderStyle.FixedSingle,
                 BackColor = Color.DeepSkyBlue,
-                AutoScroll = true
             };
             Label TotalLabel = new Label
             {
@@ -610,13 +621,28 @@ namespace Shoppy
                 Font = new Font("Arial", 20, FontStyle.Bold),
                 Location = new Point(0, 0),
                 AutoSize = true
-               
             };
+            Button Buy = new Button
+            {
+                Text = "Purchase",
+                Location = new Point(1174, 5),
+                Size = new Size(113, 39)
+            };
+            Buy.Click += (sender, e) =>
+            {
+                MessageBox.Show("Purchase successful!");
+                basket.ClearBasket();
+                this.Controls.Remove(Basketpanel);
+                ReloadItem();
+            };
+
             Topanel.Controls.Add(Back);
             Bottompanel.Controls.Add(TotalLabel);
+            Bottompanel.Controls.Add(Buy);
             Basketpanel.Controls.Add(Topanel);
             Basketpanel.Controls.Add(Infopanel);
             Basketpanel.Controls.Add(Bottompanel);
+
             
             LoadItemCO(basket.GetItems(), Infopanel);
 
@@ -630,52 +656,18 @@ namespace Shoppy
             checkout.BringToFront();
         }
 
-        public Panel SecurityPanel()
+        public Panel CategoriesDisplay = new Panel()
         {
-            Panel panel = new Panel
-            {
-                Size = new Size(1308, 685),
-                BorderStyle = BorderStyle.FixedSingle,
-                BackColor = Color.Silver
-            };
-            Label label = new Label
-            {
-                Text = "Enter Admin Password:",
-                Font = new Font("Arial", 20, FontStyle.Bold),
-                Location = new Point(10, 10),
-                AutoSize = true
-            };
-            TextBox passwordBox = new TextBox
-            {
-                Location = new Point(10, 60),
-                Width = 300,
-                Font = new Font("Arial", 16, FontStyle.Regular),
-                UseSystemPasswordChar = true
-            };
-            Button submitButton = new Button
-            {
-                Text = "Submit",
-                Location = new Point(320, 60),
-                Size = new Size(100, 40)
-            };
-            submitButton.Click += (sender, e) =>
-            {
-                if (passwordBox.Text == "admin123") // Example password check
-                {
-                    MessageBox.Show("Access Granted");
-                    this.Controls.Remove(panel);
-                }
-                else
-                {
-                    MessageBox.Show("Access Denied");
-                    this.Controls.Remove(panel);
-                }
-            };
-            panel.Controls.Add(label);
-            panel.Controls.Add(passwordBox);
-            panel.Controls.Add(submitButton);
-            return panel;
-        }
+            Size = new Size(),
+            Location = new Point(10, 10),
+            BorderStyle = BorderStyle.FixedSingle,
+            BackColor = Color.Silver
+        };
+        public Button CategorySearch = new Button()
+        {
+            Text = "Search by Category",
+            Location = new Point(10, 250),
+            Size = new Size(150, 40)
+        };
     }
-
 }

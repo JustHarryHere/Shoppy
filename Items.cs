@@ -23,7 +23,7 @@ namespace Shoppy
 
     public class SetItem : Item
     {
-        public int id=0;
+        public int id;
         public SetItem(string name, double price, int quantity, string category, string description, string imagePath)
         {
             this.name = name;
@@ -35,8 +35,9 @@ namespace Shoppy
         }
         public override void EditItem()
         {
-            Form Editor = new LoginForm();
-
+            AddandEditItem Editor = new AddandEditItem(id);
+            Editor.EditEntry(this);
+            Editor.Show();
 
         }
         public void DisplayItemInfo()
